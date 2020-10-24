@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Svg\\' => array($vendorDir . '/phenx/php-svg-lib/src'),
     'Spreadsheet' => array($vendorDir . '/pablodalloglio/spreadsheet_excel_writer'),
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'PHPRtfLite' => array($vendorDir . '/phprtflite/phprtflite/lib'),
