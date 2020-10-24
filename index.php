@@ -7,7 +7,23 @@ $public = in_array($class, $ini['permission']['public_classes']);
 // AdiantiCoreApplication::setRouter(array('AdiantiRouteTranslator', 'translate'));
 
 new TSession;
-ApplicationTranslator::setLanguage( TSession::getValue('user_language'), true );
+//ApplicationTranslator::setLanguage( TSession::getValue('user_language'), true );
+
+if(isset($_SESSION['token'])){
+    $token = $_SESSION['token'];
+    $email = $_SESSION['email'];
+    TSession::setValue('token',$token);
+    unset($_SESSION['token']);
+    unset($_SESSION['email']);
+    
+    TTransaction::open('permission');
+    $user = SystemUser::newFromEmail($email);
+    if($user){
+    ApplicationAuthenticationService::loadSessionVars($user);
+    }
+    TTransaction::close();
+}
+
 
 if ( TSession::getValue('logged') )
 {
