@@ -9,8 +9,8 @@ session_start();///
 
     //chamada a API para autenticar o Token
     $oauthClient = new Google([
-    'clientId'                => '77466731204-6obj14kphldhf8nteda7uifue31kjeng.apps.googleusercontent.com',
-    'clientSecret'            => 'NNvFiMC2AbyRCzAy3gnGfII0',
+    'clientId'                => 'seuid',
+    'clientSecret'            => 'senha',
     'redirectUri'             => 'http://localhost/adianti-oauth-google/login.php',
     ]);
     
