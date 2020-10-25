@@ -5,7 +5,7 @@ require_once 'init.php';
 use League\OAuth2\Client\Provider\Google;
 
 //inicio a sessão do php
-session_start();
+session_start();///
 
     //chamada a API para autenticar o Token
     $oauthClient = new Google([
